@@ -1,0 +1,16 @@
+create table dz22."order"
+(
+    id              serial
+        constraint order_pk
+            primary key,
+    customer_id     integer          not null,
+    book_id         integer          not null,
+    book_count      integer default 1,
+    purchase_amount double precision not null
+);
+
+alter table dz22."order"
+    owner to kwmtvqmfqeblrc;
+
+create unique index order_id_uindex
+    on dz22."order" (id);

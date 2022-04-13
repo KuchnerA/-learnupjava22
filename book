@@ -1,0 +1,16 @@
+create table dz22.book
+(
+    id        serial
+        constraint book_pk
+            primary key,
+    book_name text             not null,
+    author_id integer          not null,
+    price     double precision not null
+);
+
+alter table dz22.book
+    owner to kwmtvqmfqeblrc;
+
+create unique index book_id_uindex
+    on dz22.book (id);
+
